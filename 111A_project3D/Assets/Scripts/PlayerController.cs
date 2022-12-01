@@ -31,7 +31,10 @@ public class PlayerController : MonoBehaviour
 
         H_Input = Input.GetAxis("Horizontal");
         print("左右按鍵" + H_Input);
+
         transform.Translate(Vector3.forward * Time.deltaTime * speed * VInput);
+
+        transform.Translate(Vector3.right * Time.deltaTime * trunSpeed * H_Input);
 
         CrazyDriver = Random.Range(-15, 15);
         print("CD:" + CrazyDriver);

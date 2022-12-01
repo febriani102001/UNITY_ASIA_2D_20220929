@@ -13,20 +13,26 @@ namespace RIA
         [SerializeField] private Sprite pictureUp;
         [SerializeField] private Sprite pictureMiddle;
         [SerializeField] private Sprite pictureDown;
+
         [SerializeField, Header("圖片染元件")]
+
         private SpriteRenderer spr;
 
         private void Update()
         {
             // 上下 WS - Vertical
+            // 左右 AD - Horizontal
             // 上 W +1
             // 下 S -1
             // 沒按 0
             // 輸入。取得抽向值（抽向名稱）-取得玩家按下按下鍵的值
+
             float v = Input.GetAxis("Vertical");
-            print("<color=red>玩家上下按鍵 : " + v + "</color>");
+
+            //print("<color=red>玩家上下按鍵 : " + v + "</color>");
 
             // 左右 AD - Horizontal
+
             float h = Input.GetAxis("Horizontal");
 
             transform.Translate(
@@ -49,11 +55,13 @@ namespace RIA
             // 如果 v 等於 就 中間
             if (v == 0)
             {
-                //rint("中間");
+                //print("中間");
                 spr.sprite = pictureMiddle;
+
+
+
 
             }
         }
-
     }
 }

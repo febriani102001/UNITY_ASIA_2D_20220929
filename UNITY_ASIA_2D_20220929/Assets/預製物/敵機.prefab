@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 8808214017616205324}
   - component: {fileID: 7847078354088850159}
   - component: {fileID: 7948844824541381299}
-  - component: {fileID: 1994110263}
-  - component: {fileID: 1994110264}
+  - component: {fileID: 1937414957}
+  - component: {fileID: 1937414958}
   m_Layer: 6
   m_Name: "\u6575\u6A5F"
   m_TagString: Untagged
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -178,7 +178,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0357143
---- !u!114 &1994110263
+--- !u!114 &1937414957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,8 +192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabBullet: {fileID: 3269635506187795373, guid: f62c0bc473060f1448d903f4004f7d78, type: 3}
   pointSpawn: {fileID: 441070764738262271}
-  interval: 1.5
---- !u!114 &1994110264
+  soundFire: {fileID: 8300000, guid: 033b1daf4512444018111f90f909d172, type: 3}
+  interval: 2.28
+--- !u!114 &1937414958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,3 +208,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabExplosion: {fileID: 3128641147636066224, guid: 01c891beb9a12e14e9d1e61372dd70ba, type: 3}
   nameTarget: "\u5B50\u5F48"
+  soundHit: {fileID: 8300000, guid: 5a734bcdccebe4d0aa169e4bc43d5210, type: 3}
+  soundExplosion: {fileID: 8300000, guid: eeac7ff7e4ad44587b11429a7e7b8fc1, type: 3}

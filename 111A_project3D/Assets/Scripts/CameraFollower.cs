@@ -3,22 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
-{   
-    [Header("游戲物件"), Tooltip("請放你要跟隨的游戲物件")]
-    public GameObject player;
+{
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private Transform target;
+    [SerializeField] private float translateSpeed;
+    [SerializeField] private float rotationSpeed;
 
-    [Header("攝影機扁移量")]
-    public Vector3 offset = new Vector3(0, 5, -7); //
 
-    // Start is called before the first frame update
-    void Start()
+    private void FixedUpdate()
     {
-        
+        HandleTranslation();
+        HandleRotation();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleTranslation()
     {
-        transform.position = player.transform.position + offset; //攝影機的座標加上 
+        var targetPosition = target.TransformPoint(offset);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, translateSpeed * Time.deltaTime);
+
+
+    }
+
+    private void HandleRotation()
+    {
+        var direction = target.position - transform.position;
+        var rotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
 }
+
